@@ -3,7 +3,7 @@ const { waitAndClick } = require('../../utilities/helper.js');
 
 describe('Hardcore', () => {
 
-    it.only('Search page should be opened', async () => {
+    it('Search page should be opened', async () => {
         //1. Open https://cloud.google.com/
         await page('main').open()
         // 2. By clicking the search button on the portal at the top of the page, enter in the search field
