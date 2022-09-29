@@ -1,5 +1,7 @@
 const { page } = require('../../pageobjects/pages/index.js');
-const { waitAndClick } = require('../../utilities/helper.js')
+const { waitAndClick } = require('../../utilities/helper.js');
+const testData = require ('../../testData/testData.js');
+
 
 describe ('Hurt Me Plenty', ()=> {
 
@@ -71,16 +73,15 @@ describe ('Hurt Me Plenty', ()=> {
       
 });
 
-    it('Estimate result page should display correspondent data', async () => {
-        
+    it('Estimate result page should display correspondent data', async () => { 
         //8. Check the correspondence of the data of the following fields: VM Class, Instance type, Region, local SSD, commitment term
-        await expect(page('pricingCalculator').estimateResultBlock.regionField).toHaveTextContaining('Frankfurt')
-        await expect(page('pricingCalculator').estimateResultBlock.provisioningModelField).toHaveTextContaining('Regular')
-        await expect(page('pricingCalculator').estimateResultBlock.commitmentTermField).toHaveTextContaining('1 Year')
-        await expect(page('pricingCalculator').estimateResultBlock.instanceTypeField).toHaveTextContaining('n1-standard-8')
-        await expect(page('pricingCalculator').estimateResultBlock.localSSDField).toHaveTextContaining('2x375 GiB')
+        await expect(page('pricingCalculator').estimateResultBlock.regionField).toHaveTextContaining(testData.region)
+        await expect(page('pricingCalculator').estimateResultBlock.provisioningModelField).toHaveTextContaining(testData.provisioningModel)
+        await expect(page('pricingCalculator').estimateResultBlock.commitmentTermField).toHaveTextContaining(testData.commitmentTerm)
+        await expect(page('pricingCalculator').estimateResultBlock.instanceTypeField).toHaveTextContaining(testData.instanceType)
+        await expect(page('pricingCalculator').estimateResultBlock.localSSDField).toHaveTextContaining(testData.localSSD)
         //9. Check that the rental amount per month matches the amount received when passing the test manually.
-        await expect(page('pricingCalculator').estimateResultBlock.totalEstimatedCostField).toHaveTextContaining('USD 1,081.20')
+        await expect(page('pricingCalculator').estimateResultBlock.totalEstimatedCostField).toHaveTextContaining(testData.totalEstimatedCost)
     });
             
 })
