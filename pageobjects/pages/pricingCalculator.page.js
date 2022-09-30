@@ -108,7 +108,7 @@ class PricingCalculator extends BasePage {
 
     setNumberOfGPUs(number) {
         const items = {
-            one: '//div[@class="md-select-menu-container md-active md-clickable"]//md-option[2]/div'
+            1: '//div[@class="md-select-menu-container md-active md-clickable"]//md-option[2]/div'
         }
         return $(items[number])
     }
@@ -119,7 +119,7 @@ class PricingCalculator extends BasePage {
 
     setLocalSSD(name){
         const items = {
-            twoX375: '//div[contains(text(),"2x375")]'  
+            '2x375': '//div[contains(text(),"2x375")]'  
         }
         return $(items[name])
     }
@@ -141,7 +141,7 @@ class PricingCalculator extends BasePage {
 
     setCommitedUsage(term) {
         const items = {
-            oneYear: '//div[contains(text(),"1 Year")]'
+           '1 Year': '//div[contains(text(),"1 Year")]'
         }
         return $$(items[term])[1]
     }

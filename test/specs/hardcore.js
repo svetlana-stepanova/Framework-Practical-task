@@ -33,7 +33,7 @@ describe('Hardcore', () => {
            //* Number of instances: 4
         await page('pricingCalculator').instancesField.click()
         await page('pricingCalculator').instancesField.setValue('4')
-           //* What are these instances for ?: leave blank(пуст по умолчанию, надо ли проверять на пустоту?)
+           //* What are these instances for ?: leave blank
            // * Operating System / Software: Free: Debian, CentOS, CoreOS, Ubuntu, or other User Provided OS
         await page('pricingCalculator').operatingSystem.click()
         await waitAndClick(page('pricingCalculator').setOperatingSystem('free'), 3000)
@@ -53,16 +53,16 @@ describe('Hardcore', () => {
         await waitAndClick(page('pricingCalculator').setGPUType('nVidiaTeslaV100'), 3000)
           //* Number of GPUs: 1  
         await page('pricingCalculator').numberOfGPUs.click()
-        await waitAndClick(page('pricingCalculator').setNumberOfGPUs('one'), 3000)
+        await waitAndClick(page('pricingCalculator').setNumberOfGPUs(1), 3000)
           //* Local SSD: 2x375 Gb
         await page('pricingCalculator').localSSD.click()   
-        await waitAndClick(page('pricingCalculator').setLocalSSD('twoX375'), 3000)                 
+        await waitAndClick(page('pricingCalculator').setLocalSSD('2x375'), 3000)                 
           //* Datacenter location: Frankfurt (europe-west3)
         await page('pricingCalculator').datacenterLocation.click()
         await waitAndClick(page('pricingCalculator').setDatacenterLocation('frankfurt'), 3000)
           // * Commited usage: 1 Year
         await page('pricingCalculator').commitedUsage.click()
-        await waitAndClick(page('pricingCalculator').setCommitedUsage('oneYear'), 3000)
+        await waitAndClick(page('pricingCalculator').setCommitedUsage('1 Year'), 3000)
         //7. Click Add to Estimate
         await page('pricingCalculator').addToEstimateBtn.click()
         await expect(page('pricingCalculator').estimateResultBlock.rootEl).toBeDisplayed()
