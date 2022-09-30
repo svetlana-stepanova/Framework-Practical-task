@@ -108,7 +108,7 @@ class PricingCalculator extends BasePage {
 
     setNumberOfGPUs(number) {
         const items = {
-            one: '//div[@class="md-select-menu-container md-active md-clickable"]/md-select-menu/md-content/md-option[2]/div'
+            one: '//div[@class="md-select-menu-container md-active md-clickable"]//md-option[2]/div'
         }
         return $(items[number])
     }

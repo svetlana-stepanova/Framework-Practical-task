@@ -68,7 +68,6 @@ describe('Hardcore', () => {
         await expect(page('pricingCalculator').estimateResultBlock.rootEl).toBeDisplayed()
     });
 
-    
     it('Email button on the Estimate result block should be displayed and clickable', async () => {
         await expect(page('pricingCalculator').estimateResultBlock.emailBtn).toBeDisplayed()
         await expect(page('pricingCalculator').estimateResultBlock.emailBtn).toBeClickable()
@@ -91,7 +90,6 @@ describe('Hardcore', () => {
         await page('pricingCalculator').emailYourEstimateForm.emailField.click() 
         await browser.keys(['Control', 'v'])
         await expect(page('pricingCalculator').emailYourEstimateForm.sendEmailBtn).toBeClickable()
-
     });
 
     it('Send an email and check if it has been received ', async () => {

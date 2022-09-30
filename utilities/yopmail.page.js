@@ -10,7 +10,7 @@ class YopmailPage extends BasePage {
     }
 
     get checkInboxButton () {
-        return $$('//*[@class="md but text f24 egenbut"]/span')[2]
+        return $('//*[@class="nw"]/button[2]//span')
     }
 
     get iframe () {
@@ -23,11 +23,11 @@ class YopmailPage extends BasePage {
     }
 
     get mailHeader () {
-        return $('//*[@style="margin:10px 5px 0px 8px;"]')
+        return $('//header/div[3]/div[1]')
     }
 
     get totalEstimatedMonthlyCost () {
-        return $('//tr[@style="padding: 0 0 24px 24px"]/td/table/tbody/tr[2]/td[2]/h3')
+        return $$('//div[@id="mail"]//h3') [1]
     }
 }
 

@@ -2,7 +2,6 @@ const { page } = require('../../pageobjects/pages/index.js');
 const { waitAndClick } = require('../../utilities/helper.js');
 const testData = require ('../../testData/testData.js');
 
-
 describe ('Hurt Me Plenty', ()=> {
 
     it('Search page should be opened', async () => {
@@ -15,8 +14,7 @@ describe ('Hurt Me Plenty', ()=> {
         await page('main').header.searchInput.setValue('Google Cloud Pricing Calculator')
         await browser.keys(['Enter'])
         await expect(page('main').header.searchInput).toHaveValue('Google Cloud Pricing Calculator')
-        await expect(browser).toHaveTitleContaining('Search results for')                           
-                
+        await expect(browser).toHaveTitleContaining('Search results for')                                     
     });
 
     it('Search target should be found and opened', async () => {
@@ -68,9 +66,7 @@ describe ('Hurt Me Plenty', ()=> {
         //7. Click Add to Estimate
         await page('pricingCalculator').addToEstimateBtn.click()
 
-        await expect(page('pricingCalculator').estimateResultBlock.rootEl).toBeDisplayed()
-    
-      
+        await expect(page('pricingCalculator').estimateResultBlock.rootEl).toBeDisplayed()  
 });
 
     it('Estimate result page should display correspondent data', async () => { 
@@ -82,8 +78,8 @@ describe ('Hurt Me Plenty', ()=> {
         await expect(page('pricingCalculator').estimateResultBlock.localSSDField).toHaveTextContaining(testData.localSSD)
         //9. Check that the rental amount per month matches the amount received when passing the test manually.
         await expect(page('pricingCalculator').estimateResultBlock.totalEstimatedCostField).toHaveTextContaining(testData.totalEstimatedCost)
-    });
-            
-})
+    }); 
+              
+});
 
 

@@ -7,7 +7,7 @@ class EmailYourEstimateForm extends BaseComponent {
 
     get emailField() {
 
-        return $('//form[@name="emailForm"]/md-content/div[3]//input') //   //form[@name="emailForm"]/md-content/div[3]//input
+        return $('//form[@name="emailForm"]/md-content/div[3]//input')
     }
 
     get sendEmailBtn() {
