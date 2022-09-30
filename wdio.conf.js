@@ -10,7 +10,7 @@ if (browserName !== 'firefox') {
     browserName = 'chrome'
 };
 
-// creeates directory
+// creating a directory with screenshots for failed tests
 function createDirectory(directoryName) {
     var fs = require('fs');
 
